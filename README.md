@@ -1,56 +1,45 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# OOP school library
 
-> Description the project.
+> This project is a school library store that allow to the librarian to record what books are in the library and who borrows them but also the system can allow to add new students or teachers, to add a new book and to save records of who borrowed a given book and when
 
 
 ## Built With
 
-- Major languages
-- Frameworks
-- Technologies used
-
-## Live Demo (if available)
-
-[Live Demo Link](https://livedemo.com)
-
+- Major languages : `Ruby`
+- Frameworks : none
+- Technologies used : `Git`, `Gitflows`, `Github`, `Rubocop` and `Rubygem`
 
 ## Getting Started
-
-**This is an example of how you may give instructions on setting up your project locally.**
-**Modify this file to match your project, remove sections that don't apply. For example: delete the testing section if the currect project doesn't require testing.**
-
-
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
+- Have a computer and internet connection
+- Have `Ruby` installed on your computer
+- Hava a basic knowledge of `Ruby` and `OOP` concept
+- Have `visual-studio code` or any other code editor installed on your computer.
 
 ### Setup
-
+- In order to get a copy of this project you need to download it from https://github.com/Chrissiku/OOP-School
+- Extract the zipped file and open it in your code editor
 ### Install
-
-### Usage
-
+- Run the command bellow in your terminal to get all required files
+```
+bundle install
+```
 ### Run tests
-
-### Deployment
-
-
-
+you can run one of the followin command in your terminal
+```Ruby
+> Rubocop --color
+> Rubocop -A
+```
 ## Authors
+👤 **Chris Siku**
 
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@githubhandle](https://github.com/Chrissiku)
+- Twitter: [@twitterhandle](https://twitter.com/christian_siku)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/chris-siku-4bb53b232/)
 
 ## 🤝 Contributing
 
@@ -64,9 +53,8 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- To Microvese
+- FreeCodecamp tutorials
 
 ## 📝 License
 
