@@ -7,4 +7,9 @@ class Teacher < Person
         super(name, age, parent_permission)
         @specialization = specialization
     end
+
+    # Method can_use_services?
+    def can_use_services?
+        return true
+    end
 end
