@@ -9,6 +9,7 @@ class Person
         @name = name
         @age = age
     end
+    
     # Private method is_of_age?
     def is_of_age?
         @age >= 18
@@ -20,5 +21,5 @@ class Person
         is_of_age? || @parent_permission
     end
     public :can_use_services?
-    
+
 end
