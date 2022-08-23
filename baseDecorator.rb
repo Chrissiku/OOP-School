@@ -5,4 +5,8 @@ class Decorator < Nameable
         @nemeable = nameable
         super()
     end
+
+    def correct_name
+        @nemeable.correct_name
+    end
 end
