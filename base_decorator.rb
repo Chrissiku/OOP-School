@@ -1,12 +1,12 @@
-require_relative 'nemeable'
+require_relative 'nameable'
 
 class Decorator < Nameable
     def initialize(nameable)
-        @nemeable = nameable
+        @nameable = nameable
         super()
     end
 
     def correct_name
-        @nemeable.correct_name
+        @nameable.correct_name
     end
 end

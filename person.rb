@@ -1,5 +1,8 @@
 #require Nemeable methoh
-require_relative 'nemeable'
+require_relative 'nameable'
+require_relative 'capitalizeDecorator'
+require_relative 'trimmerDecorator'
+require_relative 'base_decorator'
 # create a class called person
 class Person < Nameable
     attr_reader :id
@@ -31,4 +34,11 @@ class Person < Nameable
     end
 end
 
-puts Person.new( name:'Chris', age:20, parent_permission: false).name # Chris
+# Example of a decorator class
+person = Person.new( name:'maximilianus', age:22)
+puts person.correct_name
+
+capitalizedPerson = CapitalizeDecorator.new(person)
+puts capitalizedPerson.correct_name
+capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
+puts capitalizedTrimmedPerson.correct_name
