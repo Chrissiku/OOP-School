@@ -25,6 +25,10 @@ class Person < Nameable
     end
     public :can_use_services?
 
+    # Public method correct_name
+    def correct_name
+        return @name
+    end
 end
 
 puts Person.new( name:'Chris', age:20, parent_permission: false).name # Chris
