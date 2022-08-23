@@ -1,5 +1,7 @@
+#require Nemeable methoh
+require_relative 'nemeable'
 # create a class called person
-class Person
+class Person < Nameable
     attr_reader :id
     attr_accessor :name, :age, :parent_permission
 
