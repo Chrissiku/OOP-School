@@ -1,11 +1,10 @@
 require './app'
 
 class Main_app
-    def self.options
+    def self.options 
         puts "Welcome to School Library App!"
         puts"\n"
         puts "Please choose an option by entering a number :" 
-
         # Menu options
         @menu = {
             "1" => "List all books",
@@ -32,9 +31,9 @@ class Main_app
         when 1
             selected_option.list_books
         when 2
-            puts "List all people"
+            selected_option.list_people
         when 3
-            puts "Create a person"
+            selected_option.create_person
         when 4
             selected_option.create_book
         when 5
@@ -53,10 +52,10 @@ class Main_app
 end
 
 # Method to call the app
-def main_call
+def main_call  
     Main_app.new
 end
 
-# call the method to call the app
+# call the method to call the app 
 main_call
 

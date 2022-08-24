@@ -1,4 +1,5 @@
 require_relative 'book'
+require_relative 'person'
 class App
     def initialize
         @books = []
@@ -47,5 +48,17 @@ class App
             return
         end
         puts "Person created successfully"
+    end
+
+    # List all people method
+    def list_people
+        if @people.empty?
+            puts "No person is registered in the library"
+            puts "\n"
+            return
+        end
+        @people.each do |person|
+            puts "[#{person.class}] Name : #{person.name} | ID : #{persom.id} | Age : #{person.age}"
+        end
     end
 end

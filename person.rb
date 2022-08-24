@@ -5,16 +5,16 @@ require_relative 'trimmerDecorator'
 require_relative 'base_decorator'
 # create a class called person
 class Person < Nameable
-  attr_reader :id
-  attr_accessor :name, :age, :parent_permission, :rental
+  attr_reader :id, :rentals
+  attr_accessor :name, :age, :parent_permission
 
   # initialize the class person
-  def initialize(age:, rental:, parent_permission: true, name: 'Unknown')
+  def initialize(age:, parent_permission: true, name: 'Unknown')
     @id = rand(1..1000)
     @name = name
     @age = age
     @parent_permission = parent_permission
-    @rental = []
+    @rentals = []
   end
 
   # Private method is_of_age?
@@ -39,12 +39,3 @@ class Person < Nameable
     @rental.push(rental)
   end
 end
-
-# Example of a decorator class
-person = Person.new(name: 'maximilianus', age: 22)
-puts person.correct_name
-
-capitalizedPerson = CapitalizeDecorator.new(person)
-puts capitalizedPerson.correct_name
-capitalizedTrimmedPerson = TrimmerDecorator.new(capitalizedPerson)
-puts capitalizedTrimmedPerson.correct_name
