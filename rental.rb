@@ -5,6 +5,8 @@ class Rental
         @date = date
         @book = book
         @person = person
+        bool.rental << self
+        person.rental << self
     end
 
 end
