@@ -24,6 +24,7 @@ class App
     def list_books
         if @books.empty?
             puts "No books in the library"
+            puts "\n"
             return
         end
         @books.each do |book|
