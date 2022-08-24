@@ -6,14 +6,15 @@ require_relative 'base_decorator'
 # create a class called person
 class Person < Nameable
     attr_reader :id
-    attr_accessor :name, :age, :parent_permission
+    attr_accessor :name, :age, :parent_permission, :rental
 
     # initialize the class person 
-    def initialize(age:, parent_permission:true, name:"Unknown")
+    def initialize(age:, rental:,  parent_permission:true, name:"Unknown")
         @id = rand(1..1000)
         @name = name
         @age = age
         @parent_permission = parent_permission
+        @rental = []
     end
     
     # Private method is_of_age?
@@ -31,6 +32,11 @@ class Person < Nameable
     # Public method correct_name
     def correct_name
         return @name
+    end
+
+    # Public method add_rental
+    def add_rental
+        @rental.push(rental)
     end
 end
 

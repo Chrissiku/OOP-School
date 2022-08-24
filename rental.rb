@@ -5,4 +5,5 @@ class Rental
         @date = date
         @book = book
     end
+
 end
