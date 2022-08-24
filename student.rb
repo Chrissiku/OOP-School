@@ -16,6 +16,7 @@ class Student < Person
   # Method add_to_classroom
   def add_to_classroom(classroom)
     @classroom = classroom
+    classroom.student << self unless classroom.student.include?(self)
   end
 end
 
