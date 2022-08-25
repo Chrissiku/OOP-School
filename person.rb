@@ -8,7 +8,7 @@ class Person < Nameable
   attr_accessor :name, :age, :parent_permission
 
   # initialize the class person
-  def initialize(age, name='Unknown', parent_permission= true)
+  def initialize(age, name = 'Unknown', parent_permission = true)
     @id = rand(1..1000)
     @name = name
     @age = age
