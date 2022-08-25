@@ -2,9 +2,10 @@ require_relative 'person'
 
 # Class Student inherits from Person
 class Student < Person
+  attr_reader :classroom
   # Constructor
-  def initialize(age, name = 'Unknown', parent_permission = true, classroom)
-    super(name, age, parent_permission)
+  def initialize(age, classroom,  name = 'Unknown')
+    super(name, age)
     @classroom = classroom
   end
 

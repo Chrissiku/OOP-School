@@ -43,7 +43,7 @@ class Main_app
         when 7
             puts "Thank you for using this app!"
             exit
-        else
+        else3
             puts "Invalid option."
             puts "Enter a number between 1 and 7"
             puts "\n"
