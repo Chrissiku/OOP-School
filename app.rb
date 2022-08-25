@@ -101,12 +101,12 @@ class App
       else
         puts "Selecct a book form the following list by number"
         @books.each_with_index do |book, index|
-            puts "#{index} - Book Title : #{book.title} | Author : #{book.author}"
+            puts "#{index}) - Book Title : #{book.title} | Author : #{book.author}"
         end   
         rent_book = gets.chomp.to_i
         puts "Select a person form the following list by number (not id)"        
         @people.each_with_index do |person, index|
-            puts "#{index} - Name : #{person.name} |ID : #{person.id} | Age : #{person.age}"
+            puts "#{index}) - Name : #{person.name} |ID : #{person.id} | Age : #{person.age}"
         end
         rental_person = gets.chomp.to_i
         print "Date (YYYY/MM/DD) : "
@@ -117,5 +117,18 @@ class App
         @rentals.push(rental_info)
         puts "Rental created successfully"
       end
+    end
+
+    # List all rentals method
+    def list_rentals
+        puts "Select a person form the following list by ID"
+        @people.each do |person|
+            puts "ID : #{person.id} | Name : #{person.name}"
+        end
+        print "Enter person\'s ID :"
+        person = gets.chomp
+        @rentals.each do |rental|
+            puts "Date : #{rental.date}, Book \"#{rental.book.title}\" by : #{rental.book.author}" if rental.person.id.to_i == person.to_i
+        end
     end
 end

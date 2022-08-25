@@ -39,7 +39,7 @@ class Main_app
         when 5
             selected_option.create_rental
         when 6
-            puts "List all rentals for a given person\'s id"
+            selected_option.list_rentals
         when 7
             puts "Thank you for using this app!"
             exit
