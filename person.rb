@@ -1,15 +1,14 @@
 # require Nemeable methoh
 require_relative 'nameable'
-require_relative 'capitalizeDecorator'
-require_relative 'trimmerDecorator'
-require_relative 'base_decorator'
+require_relative 'rental'
+
 # create a class called person
 class Person < Nameable
   attr_reader :id, :rentals
   attr_accessor :name, :age, :parent_permission
 
   # initialize the class person
-  def initialize(age, parent_permission= true, name='Unknown')
+  def initialize(age, name='Unknown', parent_permission= true)
     @id = rand(1..1000)
     @name = name
     @age = age
@@ -35,7 +34,7 @@ class Person < Nameable
   end
 
   # Public method add_rental
-  def add_rental
-    @rental.push(rental)
+  def add_rental(date, person)
+    Rental.new(date, person, self)
   end
 end
