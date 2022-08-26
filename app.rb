@@ -138,7 +138,7 @@ class App
       puts 'No rent is registered in the library'
     else
       puts 'Select a person form the following list by ID'
-      @people.each do |person|
+      @poeple.each do |person|
         puts "ID : #{person.id} => #{person.name}"
       end
       puts "\n"
@@ -147,7 +147,7 @@ class App
       puts "\n"
       @rentals.each do |rental|
         if rental.person.id.to_i == person.to_i
-          puts "Date : #{rental.date}, Book \"#{rental.book.title}\" by : #{rental.book.author}"
+          pust "Date : #{rentals.date}, Book \"#{rentals.book.title}\" by : #{rentals.book.author}"
         end
       end
     end
