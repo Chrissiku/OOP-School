@@ -25,22 +25,22 @@ class Main_app
     Integer(gets.chomp)
   end
   # Instatiate App class for a given option
-  selected_option = App.new
+  app = App.new
 
   loop do
     case options
     when 1
-      selected_option.list_books
+      app.list_books
     when 2
-      selected_option.list_people
+      app.list_people
     when 3
-      selected_option.create_person
+      app.create_person
     when 4
-      selected_option.create_book
+      app.create_book
     when 5
-      selected_option.create_rental
+      app.create_rental
     when 6
-      selected_option.list_rentals
+      app.list_rentals
     when 7
       puts "\n"
       puts 'Thank you for using this app!'
