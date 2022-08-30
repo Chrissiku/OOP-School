@@ -10,23 +10,39 @@ class App
     @rentals = []
   end
 
+  # include BooksPersistence
+
+  # Get user input
+  def get_input(text)
+    print "#{text} : "
+    gets.chomp
+  end
+
+  # create object
+  def create_object(className, store, *args)
+    obj = className.new(*args)
+    store.push(obj)
+  end
+
+  # Chech if array is empty
+  def is_empty(array)
+    false if array.empty?
+    true
+  end
   # ------------Books------------------
 
   # Create book method
   def create_book
-    print 'Title : '
-    title = gets.chomp
-    print 'Author : '
-    author = gets.chomp
-
-    # Book instance
-    book = Book.new(title, author)
-    @books.push(book)
+    title = get_input('Title')
+    author = get_input('Author')
+    create_object(Book, @books, title, author)
+    puts "\n"
+    puts 'New book created successfully'
   end
 
   # List all books method
   def list_books
-    if @books.empty?
+    if is_empty(@books)
       puts "\n"
       puts 'No books in the library'
       return
@@ -39,27 +55,20 @@ class App
   # ------------People------------------
   # create student method
   def create_student
-    print 'Name : '
-    name = gets.chomp
-    print 'Age : '
-    age = gets.chomp
+    name = get_input('Name')
+    age = get_input('Age')
 
-    student = Student.new(age, nil, name)
-    @people.push(student)
+    create_object(Student, @people, age, nil, name)
     puts "\n"
     puts 'New student created successfully'
   end
 
   # create teacher method
   def create_teacher
-    print 'Name : '
-    name = gets.chomp
-    print 'Age : '
-    age = gets.chomp
-    print 'Specialization : '
-    specialization = gets.chomp
-    teacher = Teacher.new(age, specialization, name)
-    @people.push(teacher)
+    name = get_input('Name')
+    age = get_input('Age')
+    specialization = get_input('Specialization')
+    create_object(Teacher, @people, age, specialization, name)
     puts "\n"
     puts 'New teacher created successfully'
   end
@@ -87,7 +96,7 @@ class App
 
   # List all people method
   def list_people
-    if @people.empty?
+    if is_empty(@people)
       puts "\n"
       puts 'No person is registered in the library'
       return
