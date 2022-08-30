@@ -19,8 +19,8 @@ class App
   end
 
   # create object
-  def create_object(className, store, *args)
-    obj = className.new(*args)
+  def create_object(class_name, store, *args)
+    obj = class_name.new(*args)
     store.push(obj)
   end
 
