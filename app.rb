@@ -3,12 +3,16 @@ require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
+require_relative './preserve_books'
 class App
   def initialize
-    @books = []
+    # @books = []
+    @books = load_books
     @people = []
     @rentals = []
   end
+
+  include Preserve_books
 
   # include BooksPersistence
 
@@ -20,14 +24,13 @@ class App
 
   # create object
   def create_object(class_name, store, *args)
-    obj = class_name.new(*args)
-    store.push(obj)
+   #  obj = 
+    store.push(class_name.new(*args))
   end
 
   # Chech if array is empty
   def is_empty(array)
-    false if array.empty?
-    true
+    array.empty?
   end
   # ------------Books------------------
 
@@ -37,6 +40,7 @@ class App
     author = get_input('Author')
     create_object(Book, @books, title, author)
     puts "\n"
+    store_book(@books)
     puts 'New book created successfully'
   end
 

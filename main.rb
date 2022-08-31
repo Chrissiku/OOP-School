@@ -1,5 +1,4 @@
 require './app'
-
 class Main_app
   puts 'Welcome to School Library App!'
   def self.options
