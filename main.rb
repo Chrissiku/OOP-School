@@ -1,4 +1,5 @@
 require './app'
+require './save_info'
 class Main_app
   puts 'Welcome to School Library App!'
   def self.options
@@ -42,6 +43,7 @@ class Main_app
       app.list_rentals
     when 7
       puts "\n"
+      save_data(app.books)
       puts 'Thank you for using this app!'
       puts "\n"
       exit

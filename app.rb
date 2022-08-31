@@ -3,16 +3,19 @@ require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
-require_relative './preserve_books'
+require_relative 'load_info'
+require_relative 'list_info'
+require 'json'
 class App
+  attr_accessor :books
   def initialize
-    # @books = []
+    init_files
+    @books = []
     @books = load_books
     @people = []
     @rentals = []
+    @list = List_infos.new
   end
-
-  include Preserve_books
 
   # include BooksPersistence
 
@@ -23,9 +26,10 @@ class App
   end
 
   # create object
-  def create_object(class_name, store, *args)
-   #  obj = 
-    store.push(class_name.new(*args))
+  # def create_object(class_name, store, *args)
+    def create_object(class_name, *args)
+    # store.push(class_name.new(*args))
+    class_name.new(*args)
   end
 
   # Chech if array is empty
@@ -38,22 +42,22 @@ class App
   def create_book
     title = get_input('Title')
     author = get_input('Author')
-    create_object(Book, @books, title, author)
+    create_object(Book, title, author)
     puts "\n"
-    store_book(@books)
     puts 'New book created successfully'
   end
 
   # List all books method
   def list_books
-    if is_empty(@books)
-      puts "\n"
-      puts 'No books in the library'
-      return
-    end
-    @books.each do |book|
-      puts "Title : #{book.title} | Author : #{book.author}"
-    end
+    # if is_empty(@books)
+    #   puts "\n"
+    #   puts 'No books in the library'
+    #   return
+    # end
+    # @books.each do |book|
+    #   puts "Title : #{book.title} | Author : #{book.author}"
+    # end
+    @list.display_books(@books)
   end
 
   # ------------People------------------
