@@ -1,5 +1,4 @@
 require './app'
-require './save_info'
 class Main_app
   puts 'Welcome to School Library App!'
   def self.options
@@ -22,28 +21,27 @@ class Main_app
       puts "#{key} - #{menu}"
     end
     # Get user selected option
-    Integer(gets.chomp)
+    gets.chomp
   end
   # Instatiate App class for a given option
   app = App.new
 
   loop do
     case options
-    when 1
+    when '1'
       app.list_books
-    when 2
+    when '2'
       app.list_people
-    when 3
+    when '3'
       app.create_person
-    when 4
+    when '4'
       app.create_book
-    when 5
+    when '5'
       app.create_rental
-    when 6
+    when '6'
       app.list_rentals
-    when 7
+    when '7'
       puts "\n"
-      save_data(app.books)
       puts 'Thank you for using this app!'
       puts "\n"
       exit
