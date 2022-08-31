@@ -41,6 +41,7 @@ class Main_app
     when '6'
       app.list_rentals
     when '7'
+      app.save_info
       puts "\n"
       puts 'Thank you for using this app!'
       puts "\n"

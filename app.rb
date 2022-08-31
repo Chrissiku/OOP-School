@@ -1,16 +1,25 @@
+require 'json'
 require_relative 'book'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
+require_relative './data/store_info'
+require_relative './data/save_info'
 class App
+  include Store_data
+  include Save_info
   def initialize
     @books = []
     @people = []
     @rentals = []
+    load_file
   end
 
-  # include BooksPersistence
+  # save data to json file
+  def save_data
+    save_info
+  end
 
   # Get user input
   def get_input(text)
