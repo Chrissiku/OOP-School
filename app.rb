@@ -1,16 +1,25 @@
+require 'json'
 require_relative 'book'
 require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
+require_relative './store_info'
+require_relative './save_info'
 class App
+  include Store_data
+  include Save_info
   def initialize
     @books = []
     @people = []
     @rentals = []
+    load_file
   end
 
-  # include BooksPersistence
+  # save data to json file
+  def save_data
+    save_info
+  end
 
   # Get user input
   def get_input(text)
@@ -20,14 +29,12 @@ class App
 
   # create object
   def create_object(class_name, store, *args)
-    obj = class_name.new(*args)
-    store.push(obj)
+    store.push(class_name.new(*args))
   end
 
   # Chech if array is empty
   def is_empty(array)
-    false if array.empty?
-    true
+    array.empty?
   end
   # ------------Books------------------
 
@@ -102,7 +109,7 @@ class App
       return
     end
     @people.each do |person|
-      puts "[#{person.class}] Name : #{person.name} | ID : #{person.id} | Age : #{person.age}"
+      puts "[#{person.class}] ID : #{person.id} | Name : #{person.name} | Age : #{person.age} "
     end
   end
 

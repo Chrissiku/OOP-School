@@ -35,11 +35,18 @@ you can run one of the followin command in your terminal
 > Rubocop -A
 ```
 ## Authors
+
 👤 **Chris Siku**
 
 - GitHub: [@githubhandle](https://github.com/Chrissiku)
 - Twitter: [@twitterhandle](https://twitter.com/christian_siku)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/chris-siku-4bb53b232/)
+
+👤 **NabilHY**
+
+- GitHub: https://github.com/NabilHY
+- Twitter: https://twitter.com/NeoNabil2
+- LinkedIn: https://www.linkedin.com/in/nabil-hayoun/
 
 ## 🤝 Contributing
 
