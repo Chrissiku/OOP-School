@@ -26,4 +26,12 @@ describe Book do
             @book.author.should eql "Author"
         end
     end
+
+    # Test the rentals method of the book
+    describe '#add_rental' do
+        it 'Should add a new rental of the book' do
+            expect(@book.add_rental('2022/09/01', Person.new(01, 'chris'))).to be_an_instance_of Rental
+            expect(@book.rentals.length).to eql 1
+        end
+    end
 end
