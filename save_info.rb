@@ -16,13 +16,12 @@ module Save_info
     end
     # convert people to hash
     @people.each do |person|
-      person_hash << end
-      { class: person.class, name: person.name, age: person.age, id: person.id }
+      person_hash << { class: person.class, name: person.name, age: person.age, id: person.id }
     end
 
     # convert rentals to hash
     @rentals.each do |rental|
-      rentals_hash << { date: rental.date, book_author: rental.book.author, rent_book: rental.book.title,
+      rentals_hash << { date: rental.date,  rent_book: rental.book.title, book_author: rental.book.author,
                         rental_person: rental.person.name }
     end
   end
