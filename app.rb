@@ -4,8 +4,8 @@ require_relative 'person'
 require_relative 'student'
 require_relative 'teacher'
 require_relative 'rental'
-require_relative './data/store_info'
-require_relative './data/save_info'
+require_relative './store_info'
+require_relative './save_info'
 class App
   include Store_data
   include Save_info
@@ -109,7 +109,7 @@ class App
       return
     end
     @people.each do |person|
-      puts "[#{person.class}] Name : #{person.name} | ID : #{person.id} | Age : #{person.age}"
+      puts "[#{person.class}] ID : #{person.id} | Name : #{person.name} | Age : #{person.age} "
     end
   end
 
