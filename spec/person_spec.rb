@@ -39,5 +39,4 @@ describe Person do
             expect(@person.add_rental('2022/09/01', Person.new(01, 'chris'))).to be_an_instance_of Rental
         end
     end
-
 end

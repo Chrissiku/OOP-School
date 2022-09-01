@@ -13,7 +13,7 @@ describe Book do
         end
     end
 
-    # Tesst The title of the book
+    # Test The title of the book
     describe '#title' do
         it "Returns the title of the book" do
             @book.title.should eql "Title"
