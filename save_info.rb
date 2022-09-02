@@ -21,7 +21,7 @@ module Save_info
 
     # convert rentals to hash
     @rentals.each do |rental|
-      rentals_hash << { date: rental.date,  rent_book: rental.book.title, book_author: rental.book.author,
+      rentals_hash << { date: rental.date, rent_book: rental.book.title, book_author: rental.book.author,
                         rental_person: rental.person.name }
     end
   end
