@@ -31,4 +31,11 @@ describe Teacher do
       expect(@teacher.name).to eql 'chris'
     end
   end
+
+  # Test can use service
+  describe '#can_use_service' do
+    it 'Returns true' do
+      expect(@teacher.can_use_services?).to be true
+    end
+  end
 end
