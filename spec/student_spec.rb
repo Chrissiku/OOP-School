@@ -38,4 +38,11 @@ describe Student do
       expect(@student.classroom).to eql 2
     end
   end
+
+  # Test the play_hooky method
+  describe '#play_hooky' do
+    it 'Returns the string "¯\(ツ)/¯"' do
+      expect(@student.play_hooky).to eql "¯\(ツ)/¯"
+    end
+  end
 end
